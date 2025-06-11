@@ -43,6 +43,15 @@ describe('handleMessage', () => {
                   displayText: '我想看更多資訊',
                 },
               },
+              {
+                type: 'action',
+                action: {
+                  type: 'postback',
+                  label: '聯絡客服',
+                  data: 'action=call_cs',
+                  displayText: '我想聯絡客服',
+                },
+              },
             ],
           },
         },
