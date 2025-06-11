@@ -15,7 +15,7 @@ export default async function lineHandler(
     case 'unfollow':
       return handleUnfollow(event, client);
     case 'message':
-      return handleMessage(event, client);
+      return handleMessage(event);
     case 'postback':
       return handlePostback(event, client);
     default:

@@ -19,3 +19,10 @@
 
 5. 新增 push message 功能       
    功能測試: browser:  http://localhost:3000/api/push-test?userId=xxxx&message=Hello
+
+6. 新增處理 '表情符號'，'貼圖'，'圖片'，'音訊'，'位置'等訊息, 
+   包含測試程式  
+   移除  
+      /services/replyService.ts    
+      /__test__/handlers/message.test.ts 
+      /__test__/services/replyService.test.ts   

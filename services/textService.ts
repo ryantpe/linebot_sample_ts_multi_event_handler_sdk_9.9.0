@@ -1,10 +1,12 @@
-// services/replyService.ts
-import { TextMessage } from '@line/bot-sdk';
+import { MessageEvent, TextMessage } from '@line/bot-sdk';
+import { client } from '@/utils/client';
 
-export function buildReplyWithPostback(userText: string): TextMessage {
-  return {
+export async function textHandler(event: MessageEvent) {
+  const message = event.message;
+
+  const reply: TextMessage = {
     type: 'text',
-    text: `你說了：${userText}`,
+    text: `你傳送了文字：${message.text}`,
     quickReply: {
       items: [
         {
@@ -28,4 +30,9 @@ export function buildReplyWithPostback(userText: string): TextMessage {
       ],
     },
   };
+
+  return client.replyMessage({
+    replyToken: event.replyToken,
+    messages: [reply],
+  });
 }
